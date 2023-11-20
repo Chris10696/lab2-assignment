@@ -1,7 +1,8 @@
 document.getElementsByTagName('html')[0].className += ' ' +
 	("ActiveXObject" in window? 'ie' : 'no-ie')
 
-function coverflowimages(options){
+
+function coverflowimages(options) {
 	if ( !document.getElementById('coverflowoverlay') ){
 		var $overlay = $('<div id="coverflowoverlay" />').appendTo(document.body)
 		var $enlargearea = $('<div id="coverenlargearea" />').appendTo(document.body)
@@ -97,28 +98,16 @@ function coverflowimages(options){
 }
 
 ///////// Initialization code ////////////////
+$(document).ready(function() {
+	coverflowimages({
+		coverid: 'coverflow1',
+		images: [
+						['myImages/thumbNails/ChrisSmall.JPG','myImages/Chris.JPG', 'Chris Munene SCT221-0098/2021 IDEOLOGY'],
+						['myImages/thumbNails/cmkSmall.JPG', 'myImages/cmk.JPG','Chris is a very  photogenic indivual'],
+						['myImages/thumbNails/KinyuaSmall.JPG', 'myImages/Kinyua.JPG', 'A man of few words'],
+						['myImages/thumbNails/MuneneSmall.JPG', 'myImages/Munene.JPG', 'Open to all approaches of learning because learning never ends.'],
+						['myImages/thumbNails/smkSmall.JPG','myImages/smk.JPG', 'Becoming more conscious and self aware via the accountability mirror'],
+				]
+			})				
 
-coverflowimages({
-	coverid: 'coverflow1',
-	images: [
-		[<img src="myImages/img1.JPG"></img>, 'Angelina Jolie, is an American actress and filmmaker, and an Academy Award winner'],
-		[<img src="myImages/img2.JPG"></img>, 'Milla Jovovich was born in Ukraine and immigrated with her parents to the United States when she\'s five.'],
-		[<img src="myImages/img3.JPG"></img>, 'josie.jpg'],
-		[<img src="myImages/img4.JPG"></img>, 'hayden.jpg', 'Hayden Panettiere is a native of New York, and first appeared in a commercial at the age of 11 months.'],
-		[<img src="myImages/img5.JPG"></img>, 'ashley.jpg', 'Ashley was born in Granada Hills, California. She is the daughter of Naomi Judd, a country music singer and motivational speaker']
-	]
-})
-
-// Get the scroll container element
-var container = document.getElementsByClassName("scroll-container")[0];
-
-// Define a function to scroll left by 100 pixels
-function scrollLeft() {
-  container.scrollBy(-100, 0);
-}
-
-// Define a function to scroll right by 100 pixels
-function scrollRight() {
-  container.scrollBy(100, 0);
-}
-
+});
